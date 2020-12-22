@@ -71,6 +71,14 @@ function getFieldName(input) {
   } else return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
+// On successful form submit
+function submitEvent() {
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: "form-submitted",
+  });
+}
+
 // Event Listeners
 form.addEventListener("submit", function (e) {
   e.preventDefault();
